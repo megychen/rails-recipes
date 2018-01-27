@@ -54,11 +54,16 @@ gem 'paper_trail'
 gem 'rubyzip'
 gem 'axlsx'
 gem 'axlsx_rails'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'premailer-rails'
+gem 'sidekiq'
 
 group :development, :test do
   gem 'rspec-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'letter_opener'
 end
 
 group :development do

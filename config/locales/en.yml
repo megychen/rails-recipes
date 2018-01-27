@@ -21,6 +21,21 @@
 
 en:
   hello: "Hello %{name}"
+  user:
+    role:
+      admin: Admin
+      editor: Editor
   event_list: Event List
   admin:
     event_list: Admin Event List
+  registration:
+    status:
+      pending: Pending
+      confirmed: Confirmed
+      cancelled: cancelled
+  notifaction:
+    subject:
+      confirmed_registration: "Registration successful %{name}"
+
+  bulk_update: Bulk Update
+  bulk_delete: Bulk Delete

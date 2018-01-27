@@ -1,4 +1,8 @@
 "zh-CN":
+  user:
+    role:
+      admin: 超级管理员
+      editor: 活动管理员
   event:
     status:
       draft: 草稿
@@ -8,6 +12,10 @@
     status:
       pending: 报名尚未完成
       confirmed: 报名成功
+      cancelled: 报名已取消
+  notifaction:
+    subject:
+      confirmed_registration: "报名成功 %{name}"
   bulk_update: 批次编辑
   bulk_delete: 批次删除
   hello: "亲~ %{name} 你好："

@@ -1,6 +1,9 @@
 class Event < ApplicationRecord
   include RankedModel
   ranks :row_order
+  mount_uploader :logo, EventLogoUploader
+  mount_uploaders :images, EventImageUploader
+  serialize :iamges, JSON
   belongs_to :category, :optional => true
 
   validates_presence_of :name, :friendly_id
@@ -14,6 +17,11 @@ class Event < ApplicationRecord
   has_many :tickets, :dependent => :destroy, :inverse_of => :event
   accepts_nested_attributes_for :tickets, :allow_destroy => true, :reject_if => :all_blank
   has_many :registrations, :dependent => :destroy
+
+  has_many :attachments, :class_name => "EventAttachment", :dependent => :destroy
+  accepts_nested_attributes_for :attachments, :allow_destroy => true, :reject_if => :all_blank
+
+  has_many :registration_imports, :dependent => :destroy
 
   scope :only_public, -> { where( :status => "public" ) }
   scope :only_available, -> { where( :status => ["public", "private"] ) }
